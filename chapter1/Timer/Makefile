@@ -1,6 +1,12 @@
 CC = gcc
-all:
+
+all: timer timer2
+.PHONEY:clean  all
+
+timer:timer.c
 	$(CC) -o timer timer.c `pkg-config --cflags --libs gtk+-2.0`
-.PHONEY:clean
+timer2:timer2.c
+	$(CC) -o timer2 timer2.c `pkg-config --cflags --libs gtk+-2.0`
+
 clean:
-	rm timer
+	rm timer timer2
